@@ -1,0 +1,47 @@
+{
+  "name": "examsecure",
+  "private": true,
+  "version": "0.1.0",
+  "repository": "https://github.com/rajrajhans/examsecure.git",
+  "author": "Raj Rajhans <me@rajrajhans.com>",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "eslint": "^7.22.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-config-react-app": "^6.0.0",
+    "eslint-import-resolver-typescript": "^2.0.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.3",
+    "eslint-plugin-json": "^2.0.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-spellcheck": "^0.0.17",
+    "eslint-plugin-testing-library": "^3.10.1",
+    "jest": "^26.6.3",
+    "lerna": "^4.0.0",
+    "prettier": "^2.2.1",
+    "redux-devtools": "^3.7.0",
+    "rimraf": "^3.0.0"
+  },
+  "scripts": {
+    "build": "lerna run build",
+    "lint": "lerna exec -- eslint . --ext .js,.jsx,.ts,.tsx",
+    "start-candidate-app": "cd packages/examsecure-candidate-app && node scripts/start.js",
+    "start-candidate-app-with-api-calls": "cd packages/examsecure-candidate-app && set \"REACT_APP_TURN_ON_API_CALLS=1\" && node scripts/start.js",
+    "build-candidate-app": "cd packages/examsecure-candidate-app && node scripts/build.js",
+    "start-educator-app": "cd packages/examsecure-educator-app && node scripts/start.js",
+    "build-educator-app": "cd packages/examsecure-educator-app && node scripts/build.js",
+    "start-storybook": "cd packages/examsecure-design-system && yarn start",
+    "build-storybook": "cd packages/examsecure-design-system && yarn build",
+    "test-changed": "lerna run test --since master",
+    "test": "lerna run test"
+  },
+  "dependencies": {
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2"
+  }
+}
